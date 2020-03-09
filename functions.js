@@ -122,9 +122,8 @@ function relatedBooks(bookId, authors, books) {
     author =>
       (titles = titles.concat(titlesByAuthorName(author.name, authors, books)))
   ); //  to join two or more strings together
-  titles.filter((a, b) => titles.indexOf(a) === b);
 
-  // titles.splice(0, titles.length, ...new Set(title));
+  titles = titles.splice(0, titles.length, ...new Set(titles));
   return titles;
 }
 
